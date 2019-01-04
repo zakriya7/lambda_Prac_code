@@ -8,7 +8,7 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: nodejs8.11.0
-      CodeUri: ./
+      CodeUri: s3://umair-01/lambdafunction.zip
       Events:
         MyTimeApi:
           Type: Api
