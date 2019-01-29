@@ -2,6 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
+      - apt-get update
       - pip install awscli --upgrade --user
       - aws cloudformation package --debug --template-file sam-template.yaml --s3-bucket zak-test-bucket 
                                    --output-template-file outputSamTemplate.yaml
