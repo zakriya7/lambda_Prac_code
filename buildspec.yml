@@ -3,7 +3,7 @@ version: 0.2
 phases:
   build:
     commands:
-      - aws cloudformation package --template-file template.yml --s3-bucket layer-test-lamda 
+      - aws cloudformation package --template-file sam-template.yaml --s3-bucket zak-test-bucket 
                                    --output-template-file outputSamTemplate.yaml
 artifacts:
   files:
