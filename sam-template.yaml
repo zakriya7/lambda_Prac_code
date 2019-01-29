@@ -10,12 +10,11 @@ Resources:
       Layers:
         - !Ref LambdaLayerDemo
       Policies:
-        - AWSLambdaExecute
-    DependsOn: LambdaLayerDemo  
+        - AWSLambdaExecute 
   LambdaLayerDemo:
     Type: AWS::Serverless::LayerVersion
     Properties:
-      LayerName: MyLayer
+      LayerName: MyLayer12
       Description: Layer description
       ContentUri: 's3://zak-test-bucket/momentjs-lambda-layer.zip'
       CompatibleRuntimes:
