@@ -3,8 +3,11 @@ version: 0.2
 phases:
   install:
     commands:
+      - echo Nodejs App
+  build:
+    commands:
       - aws cloudformation package --template-file sam-template.yaml --s3-bucket zak-test-bucket
-                                   --output-template-file outputSamTemplate.yaml
+                                   --output-template-file outputSamTemplate.yaml                              
 artifacts:
   type: zip
   files:
