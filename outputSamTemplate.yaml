@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Globals:
+  Api:
+    Cors:
+      AllowHeaders: '''*'''
+      AllowMethods: '''*'''
+      AllowOrigin: '''*'''
+Resources:
+  Books:
+    Properties:
+      CodeUri: s3://zak-test-bucket/d35fa8f2d4194d6f61203e816d1dce34
+      Handler: currentTimeLambda.handler
+      Policies:
+      - AWSLambdaExecute
+      Runtime: nodejs8.10
+    Type: AWS::Serverless::Function
+  LambdaLayerDemo:
+    Properties:
+      CompatibleRuntimes:
+      - nodejs6.10
+      - nodejs8.10
+      ContentUri: s3://zak-test-bucket/momentjs-lambda-layer.zip
+      Description: Layer description
+      LayerName: MyLayer
+      LicenseInfo: Available under the MIT-0 license.
+      RetentionPolicy: Retain
+    Type: AWS::Serverless::LayerVersion
+Transform: AWS::Serverless-2016-10-31

@@ -7,8 +7,11 @@ Resources:
       Runtime: nodejs8.10
       CodeUri: ./
       Handler: currentTimeLambda.handler
+      Layers:
+        - !Ref LambdaLayerDemo
       Policies:
         - AWSLambdaExecute
+      DependsOn: LambdaLayerDemo  
   LambdaLayerDemo:
     Type: AWS::Serverless::LayerVersion
     Properties:
