@@ -11,7 +11,7 @@ Resources:
         - !Ref LambdaLayerDemo
       Policies:
         - AWSLambdaExecute
-      DependsOn: LambdaLayerDemo  
+    DependsOn: LambdaLayerDemo  
   LambdaLayerDemo:
     Type: AWS::Serverless::LayerVersion
     Properties:
