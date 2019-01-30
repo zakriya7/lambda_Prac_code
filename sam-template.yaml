@@ -9,7 +9,15 @@ Resources:
       Handler: currentTimeLambda.handler
       Layers:
         - !Ref LambdaLayerDemo
-      Role: arn:aws:iam::451063263679:role/idh-lambda-s3-iam-role
+      Policies:
+        - AWSLambdaExecute
+        - Version: '2012-10-17' # Policy Document
+          Statement:
+            - Effect: Allow
+              Action:
+                - s3:GetObject
+                - s3:GetObjectACL
+              Resource: '*'
   LambdaLayerDemo:
     Type: AWS::Serverless::LayerVersion
     Properties:
