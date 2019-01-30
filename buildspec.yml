@@ -2,8 +2,6 @@ version: 0.2
 phases:
   build:
     commands:
-      - apt-get install python
-      - pip install awscli --upgrade --user
       - aws cloudformation package --debug --template-file sam-template.yaml --s3-bucket idh-lambda-test-bucket
                                    --output-template-file outputSamTemplate.yaml
 artifacts:
