@@ -23,7 +23,7 @@ Resources:
     Properties:
       LayerName: MyLayer12
       Description: Layer description
-      ContentUri: 's3://zak-test-bucket/momentjs-lambda-layer.zip'
+      ContentUri: 's3://idh-lambda-test-bucket/momentjs-lambda-layer.zip'
       CompatibleRuntimes:
         - nodejs6.10
         - nodejs8.10
